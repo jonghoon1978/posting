@@ -9,7 +9,7 @@ const Permit = (props) => {
   const _session_key = `firebase:authUser:${apiKey}:[DEFAULT]`;
 
   // 세션이 있나 확인합니다
-  const is_session = sessionStorage.getItem(_session_key);
+  const is_session = sessionStorage.getItem(_session_key) ? true : false;
 
   if (is_session && user_info) {
     return <React.Fragment>{props.children}</React.Fragment>;

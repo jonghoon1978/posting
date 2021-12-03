@@ -1,10 +1,10 @@
 import { createAction, handleActions } from "redux-actions";
 import { produce } from "immer";
 
-import { setCookie, getCookie, deleteCookie } from "../../shared/Cookie";
+import { setCookie,   deleteCookie } from "../../shared/Cookie";
 
 import { auth } from "../../shared/firebase";
-import firebase from "firebase/compat/app";
+import firebase from "firebase/app";
 
 // actions
 const LOG_OUT = "LOG_OUT";
@@ -29,7 +29,7 @@ const loginFB = (id, pwd) => {
       auth
         .signInWithEmailAndPassword(id, pwd)
         .then((user) => {
-          console.log(user);
+          // console.log(user);
 
           dispatch(
             setUser({
@@ -57,7 +57,7 @@ const signupFB = (id, pwd, user_name) => {
     auth
       .createUserWithEmailAndPassword(id, pwd)
       .then((user) => {
-        console.log(user);
+        // console.log(user);
 
         auth.currentUser
           .updateProfile({
@@ -94,10 +94,10 @@ const signupFB = (id, pwd, user_name) => {
 const loginCheckFB = () => {
   return function (dispatch, getState, { history }) {
     auth.onAuthStateChanged((user) => {
-      if (user) {
+       if (user) {
         dispatch(
           setUser({
-            user_name: user.displayName,
+            user_name: user.user.displayName,
             user_profile: "",
             id: user.email,
             uid: user.uid,

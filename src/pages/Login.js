@@ -1,10 +1,12 @@
 import React from "react";
 import { Text, Input, Grid, Button } from "../elements";
-import { getCookie, setCookie, deleteCookie } from "../shared/Cookie";
+// import { getCookie, setCookie, deleteCookie } from "../shared/Cookie";
 
 import { useDispatch } from "react-redux";
 import { actionCreators as userActions } from "../redux/modules/user";
 import { emailCheck } from "../shared/common";
+
+
 
 const Login = (props) => {
   const dispatch = useDispatch();
@@ -12,8 +14,14 @@ const Login = (props) => {
   const [id, setId] = React.useState("");
   const [pwd, setPwd] = React.useState("");
 
+ 
+
+
+
   const login = () => {
-    console.log(id);
+    // console.log(id);
+
+    
 
     if (id === "" || pwd === "") {
       window.alert("아이디 혹은 비밀번호가 공란입니다! 입력해주세요!");
@@ -68,3 +76,4 @@ const Login = (props) => {
 };
 
 export default Login;
+

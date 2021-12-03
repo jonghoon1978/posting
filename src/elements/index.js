@@ -1,5 +1,4 @@
-import React from "react";
-import Grid from './Grid';
+ import Grid from './Grid';
 import Image from "./Image";
 import Text from "./Text";
 import Button from "./Button";

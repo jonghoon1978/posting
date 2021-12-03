@@ -16,3 +16,7 @@ const deleteCookie = (name) => {
   document.cookie = name + "=; expires=" + date;
 };
 export { getCookie, setCookie, deleteCookie };
+
+
+ 
+
